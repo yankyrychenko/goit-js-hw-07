@@ -1,7 +1,9 @@
-const userInputRef = document.querySelector('input[type="text"]');
-const placeOutputRef = document.querySelector("#name-output");
+const inputRef = document.querySelector('#name-input');
+const outputRef = document.querySelector('#name-output');
 
-userInputRef.addEventListener("input", (event) => {
-  placeOutputRef.textContent =
-    userInputRef.value.trim() === "" ? "незнакомец" : event.target.value.trim();
-});
+inputRef.addEventListener('input', changeName);
+
+function changeName(e) {
+  outputRef.textContent = e.target.value;
+  if (e.target.value === '') outputRef.textContent = 'незнакомец';
+}

@@ -1,12 +1,10 @@
-const selectCategoriesById = document.querySelector("#categories");
+const categRef = document.querySelector('#categories');
+const itemRef = document.querySelectorAll('.item');
 
-const amountOfCategories = selectCategoriesById.children.length;
-console.log(`В списке ${amountOfCategories} категории`);
+console.log(`В списке ${categRef.children.length} категории`);
 
-const mainListItem = document.querySelectorAll(".item");
-
-mainListItem.forEach((elem) =>
+itemRef.forEach(e =>
   console.log(
-    `Категория: ${elem.firstElementChild.textContent}\nКоличество элементов:${elem.lastElementChild.children.length}`
-  )
+    `Категория: ${e.firstElementChild.textContent}\nКоличество элементов:${e.lastElementChild.children.length}`,
+  ),
 );
